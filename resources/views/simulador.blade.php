@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.simulador')
 
 @push('title')
   Simulador
@@ -239,7 +239,7 @@
 
 @endsection
 
-@push('script')
+@push('script_simulador')
 
     <script>
 

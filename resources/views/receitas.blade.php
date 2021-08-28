@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.simulador')
 @section('content')
     
     @push('title')
@@ -186,7 +186,7 @@
 
 
 
-    @push('script')
+    @push('script_simulador')
         <script>
             $(".btn_add_produto").click(function(){
                 

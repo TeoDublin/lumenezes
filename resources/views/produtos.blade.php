@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.simulador')
 
 @push('title')
     Produtos
@@ -235,7 +235,7 @@
         </div>
     </div>
 
-    @push('script')
+    @push('script_simulador')
         
         <script>
 
