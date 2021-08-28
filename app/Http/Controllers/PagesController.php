@@ -53,7 +53,7 @@ class PagesController extends Controller
             ->select('formulas.id' , 'formulas.receita_id', 'receitas.nome', 'formulas.produto_id', 
                     'produtos.produto', 'formulas.quantidade', 'formulas.unidade', 'formulas.custo', 
                     'produtos.unidade_mili', 'produtos.quantidade_mili', 'produtos.custo_mili')
-            ->orderBy('id')
+            ->orderBy('formulas.id')
             ->get();
         return view('receitas', ['formulas' => $formulas, 'receitas' => $receitas, 'produtos' => $produtos]);
 
@@ -211,7 +211,7 @@ class PagesController extends Controller
 
         $receitas = DB::table('formulas')
         ->rightJoin('catalogos', 'formulas.receita_id', '=', 'catalogos.receita_id')
-        ->select('catalogos.receita_id')->where('catalogos.receita_id', $request->receita_id)->groupBy('receita_id')->get();
+        ->select('catalogos.receita_id')->where('catalogos.receita_id', $request->receita_id)->groupBy('catalogos.receita_id')->get();
 
         
         $this->produto_update_catalogos($receitas);        
@@ -318,7 +318,7 @@ class PagesController extends Controller
 
         $receitas = DB::table('formulas')
         ->rightJoin('catalogos', 'formulas.receita_id', '=', 'catalogos.receita_id')
-        ->select('catalogos.receita_id')->where('produto_id', $id)->groupBy('receita_id')->get();
+        ->select('catalogos.receita_id')->where('formulas.produto_id', $id)->groupBy('catalogos.receita_id')->get();
 
         $this->produto_update_catalogos($receitas);
 
