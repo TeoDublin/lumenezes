@@ -420,12 +420,12 @@ class PagesController extends Controller
             if($custo[0]->custo==null){
                 $custo = 0;
             }else{
-                $custo = $custo[0]->custo;
+                $custo = round($custo[0]->custo,0);
             }            
             
             $margem = $margem[0]->margem;
             $margem = ($margem / 100) + 1;
-            $valor = $custo * $margem;
+            $valor = round($custo * $margem,0);
             $lucro = $valor - $custo;
 
             DB::table('catalogos')
