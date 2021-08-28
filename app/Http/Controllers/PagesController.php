@@ -196,7 +196,7 @@ class PagesController extends Controller
 
         $receitas = DB::table('formulas')
         ->rightJoin('catalogos', 'formulas.receita_id', '=', 'catalogos.receita_id')
-        ->select('catalogos.receita_id')->where('catalogos.receita_id', $request->receita_id)->groupBy('receita_id')->get();
+        ->select('catalogos.receita_id')->where('catalogos.receita_id', $request->receita_id)->groupBy('catalogos.receita_id')->get();
 
         $this->produto_update_catalogos($receitas);        
         
