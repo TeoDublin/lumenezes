@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCatalogosTable extends Migration
+class CreateCatalogoBolosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,25 +13,22 @@ class CreateCatalogosTable extends Migration
      */
     public function up()
     {
-        Schema::create('catalogos', function (Blueprint $table) {
+        Schema::create('catalogo_bolos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->unsignedInteger('receita_id');
+            $table->unsignedInteger('bolo_id');
             $table->float('peso');
             $table->string('unidade_peso');
-            $table->integer('quantidade');
             $table->float('margem');
             $table->float('custo');
             $table->float('lucro');
             $table->float('valor');
             $table->float('custo_kg');
             $table->float('lucro_kg');
-            $table->float('valor_kg');
-            $table->float('custo_unidade');
-            $table->float('lucro_unidade');
-            $table->float('valor_unidade');            
+            $table->float('valor_kg'); 
+            $table->json('componentes');             
             $table->timestamps();
-            $table->foreign('receita_id')->references('id')->on('receitas')->onUpdate('cascade')->onDelete('cascade');;
+            $table->foreign('bolo_id')->references('id')->on('bolos')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -42,6 +39,6 @@ class CreateCatalogosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalogos');
+        Schema::dropIfExists('catalogo_bolos');
     }
 }

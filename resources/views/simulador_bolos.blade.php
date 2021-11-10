@@ -18,15 +18,14 @@
 
 <ul class="nav nav-tabs mb-4">
   <li class="nav-item">
-    <a class="nav-link active fw-bold" aria-current="page" href="#">Doces</a>
+    <a class="nav-link" href="/simulador">Doces</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" href="/simulador_bolos">Bolos</a>
+    <a class="nav-link active fw-bold" aria-current="page" href="#">Bolos</a>
   </li>     
 </ul>
-
 <div class="container mx-0">
-  <form action="{{ route('simulador_add_route') }}" method="POST">
+  <form action="{{ route('simulador_bolos_add_route') }}" method="POST">
     @csrf
     <div class="row">
       <div class="col-10 mx-0 p-0">
@@ -45,6 +44,9 @@
     </div>
   </form>
 </div>
+
+
+
 
 @if ($errors->any())
   <div class="alert alert-danger">
@@ -172,7 +174,7 @@
           </td>
           <td class="align-middle px-0 " id="td_valor"><?php echo round($catalogo->valor,0);?></td>
 
-          <form action="{{ route('simulador_detalhe_route') }}" method="POST">
+          <form action="{{ route('simulador_detalhe_bolos_route') }}" method="POST">
             @csrf
             <td class="align-middle px-0 ">        
               <input type="text" name="id" value="{{ $catalogo->id }}" hidden>
@@ -185,7 +187,7 @@
             </td>
           </form>
 
-          <form action="{{ route('delete_simulador_route') }}" method="POST">
+          <form action="{{ route('delete_simulador_bolos_route') }}" method="POST">
             @csrf
             @method('delete')
             <td class="align-middle px-0 ">   
@@ -207,6 +209,9 @@
     </tbody>
   </table>
 </div>
+
+
+
 
 @endsection
 

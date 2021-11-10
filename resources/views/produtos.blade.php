@@ -163,11 +163,11 @@
         </tbody>
         </table>
     </div>
-    <div class="modal fade texto" id="modalInsert" aria-hidden="true" aria-labelledby="modalInsertLabel" tabindex="-1">
+    <div class="modal fade texto text-center" id="modalInsert" aria-hidden="true" aria-labelledby="modalInsertLabel" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalInsertLabel">Produto</h5>
+                <div class="modal-header text-center">
+                    <h5 class="modal-title text-center" id="modalInsertLabel">Produto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('insert_produtos_route') }}" method="POST">
@@ -175,11 +175,11 @@
                     <div class="modal-body">        
 
                         <span class="form-text" for="produto">Produto</span>
-                        <input type="text" name="produto" id="produto" class="form-control">
+                        <input type="text" name="produto" id="produto" class="form-control text-center">
                         <span class="form-text" for="quantidade">Quantidade</span>
-                        <input type="text" name="quantidade" id="quantidade" class="form-control">
+                        <input type="text" name="quantidade" id="quantidade" class="form-control text-center">
                         <span class="form-text" for="unidade">Unidade</span>
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="unidade" id="unidade">
+                        <select class="form-select text-center" id="floatingSelect" aria-label="Floating label select example" name="unidade" id="unidade">
                             <option selected></option>
                             <option value="Kg">Kg</option>
                             <option value="g">g</option>
@@ -187,7 +187,7 @@
                             <option value="ml">ml</option>
                         </select>                   
                         <span class="form-text" for="custo">Custo</span>
-                        <input type="number" name="custo" id="custo" class="form-control" step="any">                                                            
+                        <input type="number" name="custo" id="custo" class="form-control text-center" step="any">                                                            
                    
                     </div>
                     <div class="modal-footer">
@@ -199,24 +199,24 @@
     </div>
       
 
-    <div class="modal fade texto" id="modalUpdate" aria-hidden="true" aria-labelledby="modalUpdateLabel" tabindex="-1">
+    <div class="modal fade texto text-center" id="modalUpdate" aria-hidden="true" aria-labelledby="modalUpdateLabel" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalUpdateLabel">Produto</h5>
+                <div class="modal-header text-center">
+                    <h5 class="modal-title text-center" id="modalUpdateLabel">Produto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('update_produtos_route') }}" method="POST">
                     @csrf
                     @method('put')
                     <div class="modal-body">
-                        <input type="text" name="id_up" id="id_up" class="form-control" hidden>
+                        <input type="text" name="id_up" id="id_up" class="form-control text-center" hidden>
                         <span class="form-text" for="produto_up">Produto</span>
-                        <input type="text" name="produto_up" id="produto_up" class="form-control">
+                        <input type="text" name="produto_up" id="produto_up" class="form-control text-center">
                         <span class="form-text" for="quantidade_up">Quantidade</span>
-                        <input type="text" name="quantidade_up" id="quantidade_up" class="form-control">
+                        <input type="text" name="quantidade_up" id="quantidade_up" class="form-control text-center">
                         <span class="form-text" for="unidade_up">Unidade</span>
-                        <select class="form-select" aria-label="Floating label select example" name="unidade_up" id="unidade_up">
+                        <select class="form-select text-center" aria-label="Floating label select example" name="unidade_up" id="unidade_up">
                             <option selected></option>
                             <option value="Kg">Kg</option>
                             <option value="g">g</option>
@@ -224,7 +224,7 @@
                             <option value="ml">ml</option>
                         </select>                   
                         <span class="form-text" for="custo_up">Custo</span>
-                        <input type="number" name="custo_up" id="custo_up" class="form-control" step="any">                                                            
+                        <input type="number" name="custo_up" id="custo_up" class="form-control text-center" step="any">                                                            
                    
                     </div>
                     <div class="modal-footer">

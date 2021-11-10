@@ -38,6 +38,7 @@
         .texto-terciario{
             color: rgb(12, 12, 12);font-style: italic;
         }        
+        
         /* Hide scrollbar for Chrome, Safari and Opera */
         .corpo::-webkit-scrollbar {
         display: none;
@@ -48,7 +49,6 @@
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         }
-
     </style>    
 
 </head>
@@ -57,14 +57,13 @@
 
         <header class="app-header navbar fixed-top">
          
-            <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
+            <div class="p-2">
+                <a href="@stack('back_to')">
+                    <i class="fa fa-arrow-left fa-2x"></i>
+                </a>
+            </div>
+
+            
             <span class="navbar-brand texto-primario">@stack('title')</span>
             <span class="navbar-text"></span>
 
@@ -72,71 +71,9 @@
         </header>
 
         <div class="app-body">
-        
-            <div class="sidebar">
-                <nav class="sidebar-nav">
-    
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">
-                                <i class="nav-icon fas fa-fw fa-credit-card"></i>
-                                Vendas
-                            </a>
-                        </li>              
-
-                        <li class="nav-item">
-                            <a href="/simulador" class="nav-link">
-                                <i class="nav-icon fas fa-fw fa-calculator"></i>
-                                Simulador
-                            </a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a href="/receitas" class="nav-link hover">
-                                <i class="nav-icon fas fa-fw fa-cookie-bite"></i>
-                                Receitas
-                            </a>
-                        </li>                        
-                 
-
-                        <li class="nav-item">
-                            <a href="/produtos" class="nav-link">
-                                <i class="nav-icon fas fa-fw fa-shopping-cart"></i>
-                                Produtos
-                            </a>
-                        </li>                    
-                    </ul>
-    
-                </nav>
-
-                <div class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        <i class="nav-icon fas fa-fw fa-door-open"></i>
-                        Logout
-                    </a>
-    
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-    
-                <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+            <div style="padding-top: 20px" class="container-fluid p-1 m-0">
+                @yield('content')
             </div>
-    
-    
-            <main class="main">
-                <div style="padding-top: 20px" class="container-fluid p-1">
-                   
-                    <main>
-                        @yield('content')
-                    </main>
-    
-                </div>
-    
-            </main>
-    
         </div>        
 
 

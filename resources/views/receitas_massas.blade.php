@@ -8,13 +8,13 @@
 
     <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
-            <a class="nav-link active fw-bold" aria-current="page" href="#">Doces</a>
+            <a class="nav-link" href="/receitas">Unit</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/receitas_bolos">Bolos</a>
-        </li>
+            <a class="nav-link" href="/receitas_bolos">Bolo</a>
+          </li>
         <li class="nav-item">
-            <a class="nav-link" href="/receitas_massas">Mass</a>
+            <a class="nav-link active fw-bold" aria-current="page" href="#">Massas</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/receitas_recheios">Rech</a>
@@ -42,8 +42,8 @@
                 </select>      
             </div>
 
-            <input type="text" name="tipo" value="unitarios" class="form-control" hidden>       
-            <input type="text" name="route" value="receitas_route" class="form-control" hidden>      
+            <input type="text" name="tipo" value="massas" class="form-control" hidden>       
+            <input type="text" name="route" value="receitas_massas_route" class="form-control" hidden>      
 
             <div class="col-2 pl-0">
                 <button 
@@ -131,12 +131,12 @@
                                                     <input type="text" name="id" value="{{ $formula->id }}" hidden>
                                                     <input type="text" name="item" value="{{ $receita->nome }}" hidden>
                                                     <input type="text" name="receita_id" value="{{ $receita->id }}" hidden>
-                                                    <input type="text" name="route_delete_formulas" value="receitas_route" class="form-control" hidden>
+                                                    <input type="text" name="route_delete_formulas" value="receitas_massas_route" class="form-control" hidden>
                                                     <button type="submit" class="border-0" style="background-color:transparent" >
                                                         <i class="fas fa-times-circle text-danger"></i> 
                                                     </button>                                              
                                                 </form>
-                                            </div>                                      
+                                            </div>                                    
                                         </div>
                                     @endif
                                 @endforeach     
@@ -156,7 +156,7 @@
                                         <input type="text" class="form-control" name="receita_id" value="{{ $receita->id }}" hidden>
                                         <input type="text" class="form-control" id="produto_unidade_mili_{{ $receita->id }}" name="produto_unidade_mili" value="" hidden>
                                         <input type="text" class="form-control" id="produto_custo_mili_{{ $receita->id }}" name="produto_custo_mili" value="" hidden>
-                                        <input type="text" name="route_insert" value="receitas_route" class="form-control" hidden>  
+                                        <input type="text" name="route_insert" value="receitas_massas_route" class="form-control" hidden>  
 
                                         <div class="col-5 p-1" receita_id="{{ $receita->id }}">
                                             <select class="form-select controla_unidades" name="produto_id" id="produto_id_{{ $receita->id }}" >
@@ -204,7 +204,7 @@
                     @method('delete')
                         <input type="text" name="receita_id" value="{{ $receita->id }}" hidden>
                         <input type="text" name="reita_item" value="{{ $receita->nome }}" hidden>
-                        <input type="text" name="route_delete" value="receitas_route" class="form-control" hidden> 
+                        <input type="text" name="route_delete" value="receitas_massas_route" class="form-control" hidden> 
                         <button type="submit" class="border-0" style="background-color:transparent" >
                             <i class="fas fa-times-circle text-danger fa-lg pt-3"></i> 
                         </button>  
